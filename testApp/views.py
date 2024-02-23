@@ -6,12 +6,15 @@ from testApp.serializers import EmployeeSerialzer
 from rest_framework.response import Response
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListCreateAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView,RetrieveUpdateDestroyAPIView
 
+#==== This is to list all records using APIViews =======
 # class EmpModelListApiView(APIView):
 #     def get(self, request, format=None):
 #        qs= Employee.objects.all()
 #        Serializer= EmployeeSerialzer(qs, many=True)
 #        return Response(Serializer.data)
-   
+
+
+#==== This is to list all records using ListAPIView using the normal way =======
 class EmpModelListApiView(ListAPIView):
         serializer_class= EmployeeSerialzer
         
@@ -21,12 +24,15 @@ class EmpModelListApiView(ListAPIView):
                 if name is not None:
                         qs = qs.filter(emp_Name__icontains=name)
                 return qs
+#==== This is to list all records using ListAPIView using predefined variables =======
 class EmpModelListApiView(ListAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
+   
 class EmpModelCreateApiView(CreateAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
+   
 class EmpModelRetrieveApiView(RetrieveAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
@@ -36,6 +42,7 @@ class EmpModelUpdateApiView(UpdateAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
         lookup_field= 'id'
+   
 class EmpModelDistroyApiView(DestroyAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
@@ -44,6 +51,7 @@ class EmpModelDistroyApiView(DestroyAPIView):
 class EmpModelistCreateApiView(ListCreateAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
+   
 class EmpModelRetriveUpdateApiView(RetrieveUpdateAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
