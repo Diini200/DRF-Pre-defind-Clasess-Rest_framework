@@ -24,7 +24,7 @@ class EmpModelListApiView(ListAPIView):
                 if name is not None:
                         qs = qs.filter(emp_Name__icontains=name)
                 return qs
-#==== This is to list all records using ListAPIView using predefined variables =======
+#==== This is to list all records using ListAPIView using predefined, classess and variables =======
 class EmpModelListApiView(ListAPIView):
         queryset = Employee.objects.all()
         serializer_class = EmployeeSerialzer
