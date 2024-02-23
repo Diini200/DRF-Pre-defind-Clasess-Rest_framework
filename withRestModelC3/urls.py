@@ -20,14 +20,6 @@ from testApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/', views.EmpModelListApiView.as_view()),
-    # path('api/', views.EmpModelCreateApiView.as_view())
-    # path('api/<int:pk>', views.EmpModelRetrieveApiView.as_view())
-    # path('api/<int:id>', views.EmpModelRetrieveApiView.as_view())
-    # path('api/<int:id>', views.EmpModelUpdateApiView.as_view())
-    # path('api/<int:id>', views.EmpModelDistroyApiView.as_view())
-    # path('api/', views.EmpModelistCreateApiView.as_view())
-    # path('api/<int:id>', views.EmpModelRetriveUpdateApiView.as_view())
-    # path('api/<int:id>', views.EmpModelRetriveDistroyApiView.as_view())
-    path('api/<int:id>', views.EmpModelRetriveUpdateDistroyApiView.as_view())
+    path('api/', views.EmpModelistCreateApiView.as_view()),
+    path('api/<int:id>', views.EmpModelRetriveUpdateDistroyApiView.as_view()),
  ]
