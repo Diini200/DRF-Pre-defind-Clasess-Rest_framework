@@ -19,7 +19,7 @@ from django.urls import path
 from testApp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', views.EmpModelistCreateApiView.as_view()),
-    path('api/<int:id>', views.EmpModelRetriveUpdateDistroyApiView.as_view()),
+    path('admin/', admin.site.urls), # This end point is to add records in database 
+    path('api/', views.EmpModelistCreateApiView.as_view()), # This is endpoint is list, create and does not require a primary key
+    path('api/<int:id>', views.EmpModelRetriveUpdateDistroyApiView.as_view()), # This end point is to retrieve, update, delete and it requires a primary key.
  ]
